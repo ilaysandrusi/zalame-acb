@@ -1,0 +1,37 @@
+import { NavLink } from "react-router-dom";
+import { venue, MEDIA } from "../data/venue";
+import { useLang } from "../i18n/index.jsx";
+
+export function Header() {
+  const { t, lang, toggle } = useLang();
+
+  return (
+    <header className="site-header">
+      <a className="skip" href="#content">
+        {t.skip}
+      </a>
+      <NavLink className="brand" to="/" aria-label={lang === "he" ? venue.nameHe : venue.nameEn}>
+        <img src={MEDIA.camel} alt="" width="42" height="42" />
+        <span>
+          <span className="brand-name">{lang === "he" ? venue.nameHe : venue.nameEn}</span>
+          <span className="brand-sub">{lang === "he" ? venue.addressHe : venue.addressEn}</span>
+        </span>
+      </NavLink>
+      <nav className="nav-desk" aria-label={t.nav.aria}>
+        <NavLink to="/" end>
+          {t.nav.home}
+        </NavLink>
+        <NavLink to={{ pathname: "/", hash: "info" }}>{t.nav.info}</NavLink>
+        <NavLink to="/events">{t.nav.events}</NavLink>
+      </nav>
+      <div className="header-tools">
+        <button className="lang-btn" type="button" onClick={toggle} aria-label={t.langSwitchLabel}>
+          {t.langSwitch}
+        </button>
+        <a className="btn btn-primary header-cta" href={venue.links.reserve} rel="noreferrer">
+          {t.hero.cta}
+        </a>
+      </div>
+    </header>
+  );
+}
