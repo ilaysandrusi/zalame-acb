@@ -21,8 +21,7 @@ export const MEDIA = {
     "https://static.wixstatic.com/media/4f4a92_66f4099ed34c4d9c9c55b522315c2ef0~mv2_d_5300_3533_s_4_2.jpg",
   detail:
     "https://static.wixstatic.com/media/4f4a92_7e326dbfd0044930bf5152cf59936af0~mv2_d_5109_3406_s_4_2.jpg",
-  david:
-    "/images/david-personal.jpg",
+  david: `${import.meta.env.BASE_URL}images/david-personal.jpg`,
   eventsBar:
     "https://static.wixstatic.com/media/4f4a92_c2e646a734544a6f943540c4f7ef1dec~mv2_d_3000_2000_s_2.jpg",
   eventsWide:

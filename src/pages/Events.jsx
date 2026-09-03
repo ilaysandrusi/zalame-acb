@@ -14,15 +14,26 @@ export function Events() {
       <EventsGallery />
 
       <section className="chapter" id="events-david">
-        <div className="chapter-inner events-prose">
-          <p className="source">{t.eventsPage.davidRole}</p>
-          <h2>{t.david.title}</h2>
-          <p>{t.david.body[0]}</p>
-          <p className="events-contacts">
-            <a href={`tel:${venue.phones.events.e164}`}>{venue.phones.events.display}</a>
-            {" · "}
-            <a href={`mailto:${venue.emailEvents}`}>{venue.emailEvents}</a>
-          </p>
+        <div className="chapter-inner events-split">
+          <div>
+            <p className="source">{t.eventsPage.davidRole}</p>
+            <h2>{t.david.title}</h2>
+            <p>{t.david.body[0]}</p>
+            <p className="events-contacts">
+              <a href={`tel:${venue.phones.events.e164}`}>{venue.phones.events.display}</a>
+              {" · "}
+              <a href={`mailto:${venue.emailEvents}`}>{venue.emailEvents}</a>
+            </p>
+          </div>
+          <div className="frame events-split-photo">
+            <img
+              src={MEDIA.david}
+              alt="דוד קלינצ'ב, הרוקח הראשי של זאלמה ACB"
+              width="1920"
+              height="1280"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
