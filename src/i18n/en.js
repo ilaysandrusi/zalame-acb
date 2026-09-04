@@ -2,6 +2,10 @@ export const en = {
   lang: "en",
   dir: "ltr",
   skip: "Skip to content",
+  meta: {
+    title: "Zalame ACB | 4 HaNagarim, Be'er Sheva",
+    description: "Zalame ACB — a speakeasy cocktail bar at 4 HaNagarim, Be'er Sheva. Book a table, events, and workshops.",
+  },
   nav: {
     aria: "Main navigation",
     home: "Home",
@@ -21,6 +25,7 @@ export const en = {
     ctaSecondary: "The bar comes to you",
     open: "Open now",
     closed: "Closed now",
+    imageAlt: "Zalame bar interior, warm light and tables",
   },
   story: {
     kicker: "2016",
@@ -35,10 +40,10 @@ export const en = {
     plates: "Beside the glass",
   },
   david: {
-    kicker: "Chief pharmacist",
+    kicker: "Head bartender",
     title: "David Kalinchev",
     body: [
-      "Head pharmacist at Zalame. An avid lover of liquids and a serviceman by nature.",
+      "Head bartender at Zalame. An avid lover of liquids and a host by nature.",
       "Winner of World Class Israel 2017, and other competitions in Israel and abroad.",
       "A professional bartender with over a decade of experience in bars, consulting for bars, restaurants and drinks companies.",
     ],
@@ -76,6 +81,8 @@ export const en = {
     instagram: "Instagram",
     tripadvisor: "TripAdvisor",
     accessibility: "Access",
+    loyalty: "Members club",
+    loyaltyCta: "On the official site",
     legal: "Zalame Dadi Ltd.",
   },
   dock: {
@@ -83,10 +90,12 @@ export const en = {
     table: "Table",
     nav: "Directions",
     whatsapp: "WhatsApp",
+    contact: "Contact",
   },
   forms: {
     needNamePhone: "Add a name and phone number.",
     sent: "WhatsApp opened with your details.",
+    popupBlocked: "WhatsApp did not open. Try again or write to us directly.",
   },
   eventsPage: {
     title: "The bar comes to the event",
@@ -115,9 +124,11 @@ export const en = {
     mail: "Or by email",
     error: "Add a name and phone number.",
     davidRole: "Chief Amazement Officer",
+    davidAlt: "David Kalinchev, head bartender at Zalame ACB",
+    serviceAlt: "Zalame cocktail service at an event",
   },
   eventsGallery: {
-    title: "גלריה",
+    title: "Gallery",
     loadMore: "Load more",
     end: "No more photos",
     loadedAnnouncement: "Loaded {n} photos",

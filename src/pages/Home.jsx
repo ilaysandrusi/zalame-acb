@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { MEDIA, venue } from "../data/venue";
+import { homeSectionsMedia, MEDIA, venue } from "../data/venue";
 import { formatHoursLine, getOpenStatus, todaySpec } from "../lib/hours";
 import { NewsletterSignup } from "../components/NewsletterSignup.jsx";
 import { useLang } from "../i18n/index.jsx";
@@ -14,7 +14,7 @@ function StatusChip() {
     return () => clearInterval(id);
   }, []);
 
-  const spec = todaySpec(venue.hours, status.day);
+  const spec = todaySpec(venue.hours, status.isOpen ? status.sessionDay : status.day);
   const tonight = lang === "en" ? "Tonight" : "הלילה";
 
   return (
@@ -44,7 +44,7 @@ export function Home() {
         <div className="hero-media media-grain">
           <img
             src={MEDIA.homeHero}
-            alt=""
+            alt={t.hero.imageAlt}
             width="2048"
             height="1365"
             fetchPriority="high"
@@ -66,7 +66,7 @@ export function Home() {
           <h1 id="hero-title">{t.hero.h1}</h1>
           <p className="hero-lead">{t.hero.lead}</p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href={venue.links.reserve} rel="noreferrer">
+            <a className="btn btn-primary" href={venue.links.reserve} target="_blank" rel="noopener noreferrer">
               {t.hero.cta}
             </a>
             <Link className="btn btn-ghost" to="/events">
@@ -89,8 +89,8 @@ export function Home() {
           </div>
           <div className="frame story-photo">
             <img
-              src={MEDIA.eventsWide}
-              alt="חלל תעשייתי של זאלמה באזור המוסכים ברחוב הנגרים"
+              src={homeSectionsMedia.story.src}
+              alt={lang === "he" ? homeSectionsMedia.story.altHe : homeSectionsMedia.story.altEn}
               width="1600"
               height="1066"
               loading="lazy"
@@ -123,8 +123,8 @@ export function Home() {
       <section className="chapter david" id="david">
         <div className="frame david-photo">
           <img
-            src={MEDIA.david}
-            alt="דוד קלינצ'ב, הרוקח הראשי של זאלמה ACB"
+            src={homeSectionsMedia.david.src}
+            alt={lang === "he" ? homeSectionsMedia.david.altHe : homeSectionsMedia.david.altEn}
             width="1920"
             height="1280"
             loading="lazy"
@@ -151,18 +151,18 @@ export function Home() {
           <h2>{t.paths.title}</h2>
           <div className="paths-grid">
             <article className="path-card path-card-here frame">
-              <img className="path-img path-img-here" src={MEDIA.interiorA} alt="בר זאלמה מבפנים, מוכן לשולחן" width="1600" height="1066" loading="lazy" />
+              <img className="path-img path-img-here" src={homeSectionsMedia.pathsHere.src} alt={lang === "he" ? homeSectionsMedia.pathsHere.altHe : homeSectionsMedia.pathsHere.altEn} width="1600" height="1066" loading="lazy" />
               <div className="veil" />
               <div className="copy">
                 <h3>{t.paths.here.title}</h3>
                 <p>{t.paths.here.body}</p>
-                <a className="btn btn-primary path-cta" href={venue.links.reserve} rel="noreferrer">
+                <a className="btn btn-primary path-cta" href={venue.links.reserve} target="_blank" rel="noopener noreferrer">
                   {t.paths.here.cta}
                 </a>
               </div>
             </article>
             <article className="path-card path-card-there frame">
-              <img className="path-img path-img-there" src={MEDIA.eventsBar} alt="עמדת קוקטיילים של זאלמה באירוע מחוץ לבר" width="1600" height="1066" loading="lazy" />
+              <img className="path-img path-img-there" src={homeSectionsMedia.pathsThere.src} alt={lang === "he" ? homeSectionsMedia.pathsThere.altHe : homeSectionsMedia.pathsThere.altEn} width="1600" height="1066" loading="lazy" />
               <div className="veil" />
               <div className="copy">
                 <h3>{t.paths.there.title}</h3>
@@ -204,11 +204,11 @@ export function Home() {
               <div className="info-block">
                 <h3>{t.info.navigate}</h3>
                 <p>
-                  <a href={venue.links.waze} rel="noreferrer">
+                  <a href={venue.links.waze} target="_blank" rel="noopener noreferrer">
                     {t.info.waze}
                   </a>
                   {" · "}
-                  <a href={venue.links.maps} rel="noreferrer">
+                  <a href={venue.links.maps} target="_blank" rel="noopener noreferrer">
                     {t.info.maps}
                   </a>
                 </p>
@@ -222,12 +222,20 @@ export function Home() {
               <div className="info-block">
                 <h3>{t.info.social}</h3>
                 <p>
-                  <a href={venue.links.facebook} rel="noreferrer">
+                  <a href={venue.links.facebook} target="_blank" rel="noopener noreferrer">
                     {t.info.facebook}
                   </a>
                   {" · "}
-                  <a href={venue.links.instagram} rel="noreferrer">
+                  <a href={venue.links.instagram} target="_blank" rel="noopener noreferrer">
                     {t.info.instagram}
+                  </a>
+                </p>
+              </div>
+              <div className="info-block">
+                <h3>{t.info.loyalty}</h3>
+                <p>
+                  <a href={venue.links.loyaltyProgram} target="_blank" rel="noopener noreferrer">
+                    {t.info.loyaltyCta}
                   </a>
                 </p>
               </div>

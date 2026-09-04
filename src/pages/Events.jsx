@@ -28,7 +28,7 @@ export function Events() {
           <div className="frame events-split-photo">
             <img
               src={MEDIA.david}
-              alt="דוד קלינצ'ב, הרוקח הראשי של זאלמה ACB"
+              alt={t.eventsPage.davidAlt}
               width="1920"
               height="1280"
               loading="lazy"
@@ -42,11 +42,11 @@ export function Events() {
           <h2>{t.eventsPage.workshopsTitle}</h2>
           <p>{t.eventsPage.workshopsBody}</p>
           <p className="events-contacts">
-            <a href={venue.links.facebookEvents} rel="noreferrer">
+            <a href={venue.links.facebookEvents} target="_blank" rel="noopener noreferrer">
               {t.eventsPage.facebookEvents}
             </a>
             {" · "}
-            <a href={venue.links.instagramEvents} rel="noreferrer">
+            <a href={venue.links.instagramEvents} target="_blank" rel="noopener noreferrer">
               {t.eventsPage.instagramEvents}
             </a>
           </p>
@@ -66,7 +66,7 @@ export function Events() {
           <div className="frame events-photo">
             <img
               src={MEDIA.interiorB}
-              alt="שירות קוקטיילים של זאלמה באירוע"
+              alt={t.eventsPage.serviceAlt}
               width="1600"
               height="1066"
               loading="lazy"

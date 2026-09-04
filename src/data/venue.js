@@ -55,7 +55,7 @@ export const homeSectionsMedia = {
     orientation: "landscape",
     focal: "center",
     altHe: "דוד קלינצ'ב, הרוקח הראשי של זאלמה ACB",
-    altEn: "David Kalinchev, Chief pharmacist at Zalame ACB",
+    altEn: "David Kalinchev, head bartender at Zalame ACB",
   },
   pathsHere: {
     src: MEDIA.interiorA,
@@ -76,7 +76,7 @@ export const homeSectionsMedia = {
 export const eventsGalleryMedia = [
   // Sourced from https://www.zalame.co.il/aperitivo (Wix static assets).
   // Note: keep 10–15 items per "Load more" batch on mobile-first.
-  { id: "evt-01", src: "https://static.wixstatic.com/media/4f4a92_17e60b395ab84a03a1d3cefe18db715d~mv2_d_3960_2640_s_4_2.jpg/v1/fit/w_1920,h_1284,q_90,enc_avif,quality_auto/4f4a92_17e60b395ab84a03a1d3cefe18db715d~mv2_d_3960_2640_s_4_2.jpg", focal: "center", altHe: "צילום מאירוע ב-Zalame Events", altEn: "Photo from a Zalame Events night" },
+  { id: "evt-01", src: "https://static.wixstatic.com/media/4f4a92_17e60b395ab84a03a1d3cefe18db715d~mv2_d_3960_2640_s_4_2.jpg/v1/fit/w_1920,h_1284,q_90,enc_avif,quality_auto/4f4a92_17e60b395ab84a03a1d3cefe18db715d~mv2_d_3960_2640_s_4_2.jpg", focal: "center", altHe: "צילום 1 מאירוע ב-Zalame Events", altEn: "Photo 1 from a Zalame Events night" },
   { id: "evt-02", src: "https://static.wixstatic.com/media/4f4a92_248beab6add347778b25b7971b882dbc~mv2_d_2048_1365_s_2.jpg/v1/fit/w_1920,h_1284,q_90,enc_avif,quality_auto/4f4a92_248beab6add347778b25b7971b882dbc~mv2_d_2048_1365_s_2.jpg", focal: "center", altHe: "צילום מאירוע ב-Zalame Events", altEn: "Photo from a Zalame Events night" },
   { id: "evt-03", src: "https://static.wixstatic.com/media/4f4a92_2c988aed485942bd85700ad7e4b54c78~mv2_d_5760_3840_s_4_2.jpg/v1/fit/w_1920,h_1284,q_90,enc_avif,quality_auto/4f4a92_2c988aed485942bd85700ad7e4b54c78~mv2_d_5760_3840_s_4_2.jpg", focal: "center", altHe: "צילום מאירוע ב-Zalame Events", altEn: "Photo from a Zalame Events night" },
   { id: "evt-04", src: "https://static.wixstatic.com/media/4f4a92_3f8dc4364e0d4fb19f887d99e6afc40b~mv2_d_3500_2336_s_2.jpg/v1/fit/w_1920,h_1284,q_90,enc_avif,quality_auto/4f4a92_3f8dc4364e0d4fb19f887d99e6afc40b~mv2_d_3500_2336_s_2.jpg", focal: "center", altHe: "צילום מאירוע ב-Zalame Events", altEn: "Photo from a Zalame Events night" },

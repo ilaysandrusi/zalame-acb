@@ -13,8 +13,11 @@ export function LanguageProvider({ children }) {
     document.documentElement.lang = dict.lang;
     document.documentElement.dir = dict.dir;
     localStorage.setItem("zalame-lang", lang);
-    document.title =
-      lang === "he" ? "זאלמה ACB | הנגרים 4, באר שבע" : "Zalame ACB | 4 HaNagarim, Be'er Sheva";
+    document.title = dict.meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", dict.meta.description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", dict.meta.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", dict.meta.description);
+    document.querySelector('meta[property="og:locale"]')?.setAttribute("content", lang === "he" ? "he_IL" : "en_US");
   }, [lang]);
 
   const value = useMemo(

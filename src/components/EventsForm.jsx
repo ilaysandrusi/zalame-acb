@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { venue } from "../data/venue";
+import { openWhatsApp } from "../lib/whatsapp";
 import { useLang } from "../i18n/index.jsx";
 
 export function EventsForm() {
@@ -45,9 +46,9 @@ export function EventsForm() {
     }
     setError("");
     setBusy(true);
-    const url = `${venue.links.whatsappEvents}?text=${encodeURIComponent(buildText())}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-    setSent(true);
+    const opened = openWhatsApp(venue.phones.events.e164, buildText());
+    setSent(opened);
+    if (!opened) setError(t.forms.popupBlocked);
     setBusy(false);
   }
 
