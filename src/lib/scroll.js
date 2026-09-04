@@ -27,10 +27,12 @@ export function scheduleRouteScroll(hash) {
   }));
   const t1 = window.setTimeout(run, 60);
   const t2 = window.setTimeout(run, 180);
+  const t3 = window.setTimeout(run, 360);
 
   return () => {
     frames.forEach((id) => window.cancelAnimationFrame(id));
     window.clearTimeout(t1);
     window.clearTimeout(t2);
+    window.clearTimeout(t3);
   };
 }
