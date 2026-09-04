@@ -6,34 +6,12 @@ import { MobileDock } from "./components/MobileDock.jsx";
 import { Home } from "./pages/Home.jsx";
 import { Events } from "./pages/Events.jsx";
 import { LanguageProvider } from "./i18n/index.jsx";
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-}
-
-function scrollToId(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "instant", block: "start" });
-}
+import { scheduleRouteScroll } from "./lib/scroll.js";
 
 function RouteScroll() {
   const { pathname, hash } = useLocation();
 
-  useEffect(() => {
-    if (hash) {
-      const id = decodeURIComponent(hash.replace(/^#/, ""));
-      const run = () => scrollToId(id);
-      const frame = window.requestAnimationFrame(run);
-      const timer = window.setTimeout(run, 80);
-      return () => {
-        window.cancelAnimationFrame(frame);
-        window.clearTimeout(timer);
-      };
-    }
-
-    scrollToTop();
-    const frame = window.requestAnimationFrame(scrollToTop);
-    return () => window.cancelAnimationFrame(frame);
-  }, [pathname, hash]);
+  useEffect(() => scheduleRouteScroll(hash), [pathname, hash]);
 
   return null;
 }
