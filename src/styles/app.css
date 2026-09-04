@@ -774,11 +774,32 @@
   padding: calc(var(--header-h) + 1rem) 0 calc(var(--dock-h) + 2rem);
 }
 
+.events-hero-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
 .events-hero-logo {
   width: min(17rem, 72vw);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 8px 28px rgba(14, 12, 10, 0.45));
+}
+
+.events-hero-logo-en {
+  width: min(15rem, 64vw);
+}
+
+.events-hero-lockup {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: #8a2e38;
+  text-shadow: 0 1px 10px rgba(14, 12, 10, 0.55);
 }
 
 .events-hero-tagline {
