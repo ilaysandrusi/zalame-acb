@@ -24,18 +24,21 @@ export function FacebookIcon() {
 
 export function TripAdvisorIcon() {
   return (
-    <svg {...iconProps}>
-      <path d="M4.7 9.05 7.4 5.25c.32-.45.95-.42 1.22.06l.85 1.55c.8-.38 1.7-.58 2.63-.58.93 0 1.83.2 2.63.58l.85-1.55c.27-.48.9-.51 1.22-.06l2.7 3.8-1.55 1.15-.55-1.05c-.72-.4-1.55-.62-2.4-.62-.85 0-1.68.22-2.4.62-.3.16-.64.16-.94 0-.72-.4-1.55-.62-2.4-.62-.85 0-1.68.22-2.4.62l-.55 1.05Z" />
+    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3.05 8.35 6.35 7.55 4.55 4.55Z" fill="currentColor" />
+      <path d="M20.95 8.35 17.65 7.55 19.45 4.55Z" fill="currentColor" />
       <path
-        fillRule="evenodd"
-        d="M8.15 9.55a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm0 1.85a2.65 2.65 0 1 0 0 5.3 2.65 2.65 0 0 0 0-5.3Z"
+        d="M6.2 8.2c2.55-2.35 9.05-2.35 11.6 0"
+        stroke="currentColor"
+        strokeWidth="1.55"
+        strokeLinecap="round"
       />
-      <path
-        fillRule="evenodd"
-        d="M15.85 9.55a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm0 1.85a2.65 2.65 0 1 0 0 5.3 2.65 2.65 0 0 0 0-5.3Z"
-      />
-      <circle cx="8.15" cy="14.05" r="1.2" />
-      <circle cx="15.85" cy="14.05" r="1.2" />
+      <circle cx="7.25" cy="13.45" r="5.15" stroke="currentColor" strokeWidth="1.55" />
+      <circle cx="7.25" cy="13.45" r="2.55" stroke="currentColor" strokeWidth="1.35" />
+      <circle cx="7.25" cy="13.45" r="1.05" fill="currentColor" />
+      <circle cx="16.75" cy="13.45" r="5.15" stroke="currentColor" strokeWidth="1.55" />
+      <circle cx="16.75" cy="13.45" r="2.55" stroke="currentColor" strokeWidth="1.35" />
+      <circle cx="16.75" cy="13.45" r="1.05" fill="currentColor" />
     </svg>
   );
 }
