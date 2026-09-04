@@ -50,7 +50,7 @@ export function EventsGallery() {
             <div key={item.id} className="events-gallery-tile">
               <img
                 src={isMobile ? toMobileVariant(item.src) : item.src}
-                alt={item[`alt${t.eventsGallery.altKeySuffix}`] || item.altEn}
+                alt={`${item[`alt${t.eventsGallery.altKeySuffix}`] || item.altEn} (${idx + 1})`}
                 loading={idx < 3 ? "eager" : "lazy"}
                 decoding="async"
                 style={{ objectPosition: item.focal || "center" }}

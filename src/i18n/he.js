@@ -2,6 +2,10 @@ export const he = {
   lang: "he",
   dir: "rtl",
   skip: "דלגו לתוכן",
+  meta: {
+    title: "זאלמה ACB | הנגרים 4, באר שבע",
+    description: "זאלמה ACB — בר קוקטיילים speakeasy ברחוב הנגרים 4, באר שבע. הזמנת שולחן, אירועים וסדנאות.",
+  },
   nav: {
     aria: "ניווט ראשי",
     home: "דף הבית",
@@ -21,6 +25,7 @@ export const he = {
     ctaSecondary: "הבר מגיע לאירוע",
     open: "פתוח עכשיו",
     closed: "סגור עכשיו",
+    imageAlt: "חלל הבר של זאלמה, תאורה חמה ושולחנות",
   },
   story: {
     kicker: "2016",
@@ -76,6 +81,8 @@ export const he = {
     instagram: "אינסטגרם",
     tripadvisor: "TripAdvisor",
     accessibility: "נגישות",
+    loyalty: "מועדון חברים",
+    loyaltyCta: "לאתר הרשמי",
     legal: "זלמה דדי בע\"מ",
   },
   dock: {
@@ -83,10 +90,12 @@ export const he = {
     table: "שולחן",
     nav: "דרך",
     whatsapp: "WhatsApp",
+    contact: "פנייה",
   },
   forms: {
     needNamePhone: "נא למלא שם וטלפון.",
     sent: "נפתח וואטסאפ עם הפרטים.",
+    popupBlocked: "וואטסאפ לא נפתח. אפשר לנסות שוב או לכתוב אלינו ישירות.",
   },
   eventsPage: {
     title: "הבר מגיע לאירוע",
@@ -115,6 +124,8 @@ export const he = {
     mail: "או באימייל",
     error: "נא למלא שם וטלפון.",
     davidRole: "Chief Amazement Officer",
+    davidAlt: "דוד קלינצ'ב, הרוקח הראשי של זאלמה ACB",
+    serviceAlt: "שירות קוקטיילים של זאלמה באירוע",
   },
   eventsGallery: {
     title: "גלריה",

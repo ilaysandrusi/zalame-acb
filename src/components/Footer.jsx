@@ -31,7 +31,7 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <a className="footer-reserve" href={venue.links.reserve} rel="noreferrer">
+        <a className="footer-reserve" href={venue.links.reserve} target="_blank" rel="noopener noreferrer">
           {t.footer.reserve}
         </a>
       </div>

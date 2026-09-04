@@ -45,11 +45,12 @@ export function getOpenStatus(hours, date = new Date()) {
   }
 
   const currentMinutes = now.minutes;
-  const isOpen = windows.some((w) => currentMinutes >= w.open && currentMinutes < w.close);
+  const active = windows.find((w) => currentMinutes >= w.open && currentMinutes < w.close);
 
   return {
-    isOpen,
+    isOpen: Boolean(active),
     day: now.day,
+    sessionDay: active?.dayIndex ?? now.day,
     today,
     dayLabelHe: DAY_HE[now.day],
     dayLabelEn: DAY_EN[now.day],

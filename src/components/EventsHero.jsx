@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { MEDIA } from "../data/venue";
+import { MEDIA, venue } from "../data/venue";
 import { useLang } from "../i18n/index.jsx";
 
 export function EventsHero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [playVideo, setPlayVideo] = useState(false);
 
   useEffect(() => {
@@ -29,8 +29,8 @@ export function EventsHero() {
       <div className="events-hero-copy">
         <img
           className="events-hero-logo"
-          src={MEDIA.eventsLogo}
-          alt=""
+          src={lang === "en" ? MEDIA.camel : MEDIA.eventsLogo}
+          alt={lang === "he" ? venue.nameHe : venue.nameEn}
           width="320"
           height="320"
           fetchPriority="high"
