@@ -592,6 +592,23 @@
   font-variant-numeric: tabular-nums;
 }
 
+#content,
+#story,
+#drinks,
+#david,
+#info,
+#events-form,
+#events-home,
+#newsletter,
+.events-hero,
+.events-gallery {
+  scroll-margin-top: calc(var(--header-h) + 0.5rem);
+}
+
+.hours-range {
+  unicode-bidi: isolate;
+}
+
 .hours-table th,
 .hours-table td {
   text-align: start;

@@ -13,7 +13,12 @@ export function Header() {
       <a className="skip" href="#content">
         {t.skip}
       </a>
-      <NavLink className="brand" to="/" aria-label={lang === "he" ? venue.nameHe : venue.nameEn}>
+      <NavLink
+        className="brand"
+        to="/"
+        aria-label={lang === "he" ? venue.nameHe : venue.nameEn}
+        onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}
+      >
         <img src={MEDIA.camel} alt="" width="42" height="42" />
         <span>
           <span className="brand-name">{lang === "he" ? venue.nameHe : venue.nameEn}</span>
@@ -21,7 +26,12 @@ export function Header() {
         </span>
       </NavLink>
       <nav className="nav-desk" aria-label={t.nav.aria}>
-        <NavLink to="/" end className={() => (onBareHome ? "active" : undefined)}>
+        <NavLink
+          to="/"
+          end
+          className={() => (onBareHome ? "active" : undefined)}
+          onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}
+        >
           {t.nav.home}
         </NavLink>
         <NavLink to={{ pathname: "/", hash: "story" }} className={() => (hash === "#story" ? "active" : undefined)}>
@@ -30,7 +40,9 @@ export function Header() {
         <NavLink to={{ pathname: "/", hash: "drinks" }} className={() => (hash === "#drinks" ? "active" : undefined)}>
           {t.nav.drinks}
         </NavLink>
-        <NavLink to="/events">{t.nav.events}</NavLink>
+        <NavLink to="/events" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
+          {t.nav.events}
+        </NavLink>
         <NavLink to={{ pathname: "/", hash: "info" }} className={() => (hash === "#info" ? "active" : undefined)}>
           {t.nav.info}
         </NavLink>
