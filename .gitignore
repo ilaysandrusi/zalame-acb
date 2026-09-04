@@ -3,3 +3,24 @@ dist
 qa
 .DS_Store
 *.log
+
+# Ruflo local secrets and runtime data
+.env
+.env.local
+.env.*.local
+.claude-flow/data/
+.claude-flow/logs/
+.claude-flow/sessions/
+.claude-flow/metrics/
+.claude-flow/neural/
+.claude-flow/policy/
+.claude-flow/security/
+.claude-flow/daemon-state.json
+.claude-flow/*.db
+.claude-flow/*.sqlite
+.swarm/*.db
+.swarm/*.db-shm
+.swarm/*.db-wal
+ruvector.db
+*.sqlite
+*.sqlite-journal
