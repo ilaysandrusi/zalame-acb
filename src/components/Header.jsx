@@ -1,12 +1,14 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { venue, MEDIA } from "../data/venue";
 import { useLang } from "../i18n/index.jsx";
+import { scheduleRouteScroll, scrollToTop } from "../lib/scroll.js";
 
 export function Header() {
   const { t, lang, toggle } = useLang();
   const { pathname, hash } = useLocation();
   const onEvents = pathname.endsWith("/events");
-  const onBareHome = !onEvents && hash === "";
+  const onInfo = !onEvents && hash === "#info";
+  const onHome = !onEvents && !onInfo;
 
   return (
     <header className="site-header">
@@ -15,9 +17,9 @@ export function Header() {
       </a>
       <NavLink
         className="brand"
-        to="/"
+        to={{ pathname: "/", hash: "" }}
         aria-label={lang === "he" ? venue.nameHe : venue.nameEn}
-        onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}
+        onClick={() => scrollToTop()}
       >
         <img src={MEDIA.camel} alt="" width="42" height="42" />
         <span>
@@ -27,28 +29,34 @@ export function Header() {
       </NavLink>
       <nav className="nav-desk" aria-label={t.nav.aria}>
         <NavLink
-          to="/"
+          to={{ pathname: "/", hash: "" }}
           end
-          className={() => (onBareHome ? "active" : undefined)}
-          onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}
+          className={() => (onHome ? "active" : undefined)}
+          onClick={() => scheduleRouteScroll("")}
         >
           {t.nav.home}
         </NavLink>
-        <NavLink to={{ pathname: "/", hash: "story" }} className={() => (hash === "#story" ? "active" : undefined)}>
-          {t.nav.story}
-        </NavLink>
-        <NavLink to={{ pathname: "/", hash: "drinks" }} className={() => (hash === "#drinks" ? "active" : undefined)}>
-          {t.nav.drinks}
-        </NavLink>
-        <NavLink to="/events" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
-          {t.nav.events}
-        </NavLink>
-        <NavLink to={{ pathname: "/", hash: "info" }} className={() => (hash === "#info" ? "active" : undefined)}>
+        <NavLink
+          to={{ pathname: "/", hash: "info" }}
+          className={() => (onInfo ? "active" : undefined)}
+          onClick={() => scheduleRouteScroll("#info")}
+        >
           {t.nav.info}
+        </NavLink>
+        <NavLink
+          to={{ pathname: "/events", hash: "" }}
+          className={() => (onEvents ? "active" : undefined)}
+          onClick={() => scheduleRouteScroll("")}
+        >
+          {t.nav.events}
         </NavLink>
       </nav>
       <div className="header-tools">
-        <NavLink className="header-info" to={{ pathname: "/", hash: "info" }}>
+        <NavLink
+          className="header-info"
+          to={{ pathname: "/", hash: "info" }}
+          onClick={() => scheduleRouteScroll("#info")}
+        >
           {t.nav.info}
         </NavLink>
         <button className="lang-btn" type="button" onClick={toggle} aria-label={t.langSwitchLabel}>
