@@ -57,12 +57,16 @@ export function getOpenStatus(hours, date = new Date()) {
   };
 }
 
+export function formatHoursRange(open, close, lang) {
+  return lang === "he" ? `${open} עד ${close}` : `${open}–${close}`;
+}
+
 export function formatHoursLine(hours, lang) {
   const days = lang === "en" ? DAY_EN : DAY_HE;
   return hours.map((h) => ({
     ...h,
     label: days[h.day],
-    range: `${h.open}-${h.close}`,
+    range: formatHoursRange(h.open, h.close, lang),
   }));
 }
 

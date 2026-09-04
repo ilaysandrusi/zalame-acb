@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { homeSectionsMedia, MEDIA, venue } from "../data/venue";
-import { formatHoursLine, getOpenStatus, todaySpec } from "../lib/hours";
+import { formatHoursLine, formatHoursRange, getOpenStatus, todaySpec } from "../lib/hours";
 import { NewsletterSignup } from "../components/NewsletterSignup.jsx";
 import { useLang } from "../i18n/index.jsx";
 
@@ -25,8 +25,8 @@ function StatusChip() {
         <>
           <span aria-hidden="true"> · </span>
           {tonight}{" "}
-          <span dir="ltr">
-            {spec.open}-{spec.close}
+          <span className="hours-range" dir={lang === "he" ? "rtl" : "ltr"}>
+            {formatHoursRange(spec.open, spec.close, lang)}
           </span>
         </>
       ) : null}
@@ -255,7 +255,9 @@ export function Home() {
                   {hours.map((row) => (
                     <tr key={row.day} className={row.day === getOpenStatus(venue.hours).day ? "is-today" : ""}>
                       <th scope="row">{row.label}</th>
-                      <td dir="ltr">{row.range}</td>
+                      <td className="hours-range" dir={lang === "he" ? "rtl" : "ltr"}>
+                        {row.range}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
