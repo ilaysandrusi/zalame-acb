@@ -27,14 +27,17 @@ export function EventsHero() {
       </div>
       <div className="events-hero-scrim" aria-hidden="true" />
       <div className="events-hero-copy">
-        <img
-          className="events-hero-logo"
-          src={lang === "en" ? MEDIA.camel : MEDIA.eventsLogo}
-          alt={lang === "he" ? venue.nameHe : venue.nameEn}
-          width="320"
-          height="320"
-          fetchPriority="high"
-        />
+        <div className="events-hero-wordmark">
+          <img
+            className={lang === "en" ? "events-hero-logo events-hero-logo-en" : "events-hero-logo"}
+            src={lang === "en" ? MEDIA.homeLogo : MEDIA.eventsLogo}
+            alt={lang === "he" ? venue.nameHe : venue.nameEn}
+            width="320"
+            height="320"
+            fetchPriority="high"
+          />
+          {lang === "en" ? <p className="events-hero-lockup">COCKTAIL BAR</p> : null}
+        </div>
         <h1 id="events-hero-title" className="events-hero-tagline">
           {t.eventsPage.heroTagline}
         </h1>
