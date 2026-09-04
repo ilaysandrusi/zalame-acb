@@ -795,11 +795,10 @@
 .events-hero-lockup {
   margin: 0;
   font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  color: #8a2e38;
-  text-shadow: 0 1px 10px rgba(14, 12, 10, 0.55);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: #c94b57;
 }
 
 .events-hero-tagline {
