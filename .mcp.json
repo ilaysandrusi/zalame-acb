@@ -1,5 +1,8 @@
 {
   "mcpServers": {
+    "getlayers": {
+      "url": "https://mcp.getlayers.ai/mcp"
+    },
     "claude-flow": {
       "command": "npx",
       "args": [

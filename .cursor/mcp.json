@@ -1,5 +1,8 @@
 {
   "mcpServers": {
+    "getlayers": {
+      "url": "https://mcp.getlayers.ai/mcp"
+    },
     "ruflo": {
       "command": "npx",
       "args": [
