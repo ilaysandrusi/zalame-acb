@@ -4,8 +4,9 @@ import { useLang } from "../i18n/index.jsx";
 
 export function Header() {
   const { t, lang, toggle } = useLang();
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const onEvents = pathname.endsWith("/events");
+  const onBareHome = !onEvents && hash === "";
 
   return (
     <header className="site-header">
@@ -20,13 +21,19 @@ export function Header() {
         </span>
       </NavLink>
       <nav className="nav-desk" aria-label={t.nav.aria}>
-        <NavLink to="/" end>
+        <NavLink to="/" end className={() => (onBareHome ? "active" : undefined)}>
           {t.nav.home}
         </NavLink>
-        <NavLink to={{ pathname: "/", hash: "story" }}>{t.nav.story}</NavLink>
-        <NavLink to={{ pathname: "/", hash: "drinks" }}>{t.nav.drinks}</NavLink>
+        <NavLink to={{ pathname: "/", hash: "story" }} className={() => (hash === "#story" ? "active" : undefined)}>
+          {t.nav.story}
+        </NavLink>
+        <NavLink to={{ pathname: "/", hash: "drinks" }} className={() => (hash === "#drinks" ? "active" : undefined)}>
+          {t.nav.drinks}
+        </NavLink>
         <NavLink to="/events">{t.nav.events}</NavLink>
-        <NavLink to={{ pathname: "/", hash: "info" }}>{t.nav.info}</NavLink>
+        <NavLink to={{ pathname: "/", hash: "info" }} className={() => (hash === "#info" ? "active" : undefined)}>
+          {t.nav.info}
+        </NavLink>
       </nav>
       <div className="header-tools">
         <NavLink className="header-info" to={{ pathname: "/", hash: "info" }}>
