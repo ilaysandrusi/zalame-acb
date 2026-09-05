@@ -25,15 +25,33 @@ export function Header() {
 
   useEffect(() => {
     if (!menuOpen) return undefined;
+
     const onKey = (event) => {
       if (event.key === "Escape") setMenuOpen(false);
     };
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+
+    const scrollY = window.scrollY;
+    const { body } = document;
+    const previous = {
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+      overflow: body.style.overflow,
+    };
+
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
+
     return () => {
-      document.body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", onKey);
+      body.style.position = previous.position;
+      body.style.top = previous.top;
+      body.style.width = previous.width;
+      body.style.overflow = previous.overflow;
+      window.scrollTo(0, scrollY);
     };
   }, [menuOpen]);
 
@@ -48,7 +66,7 @@ export function Header() {
 
   return (
     <>
-      <header className="site-header">
+      <header className={menuOpen ? "site-header is-menu-open" : "site-header"}>
         <a className="skip" href="#content">
           {t.skip}
         </a>
