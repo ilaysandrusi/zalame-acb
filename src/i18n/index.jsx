@@ -25,6 +25,7 @@ export function LanguageProvider({ children }) {
       lang,
       t: dictionaries[lang],
       toggle: () => setLang((prev) => (prev === "he" ? "en" : "he")),
+      setLang,
     }),
     [lang],
   );

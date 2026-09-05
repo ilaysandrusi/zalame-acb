@@ -77,6 +77,80 @@
   flex-shrink: 0;
 }
 
+.menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-inline-end: -0.35rem;
+  background: transparent;
+  border: 0;
+  color: var(--smoke);
+  cursor: pointer;
+}
+
+.nav-drawer {
+  position: fixed;
+  top: var(--header-h);
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-5) 1.15rem calc(var(--dock-h) + var(--space-6));
+  background: var(--chrome-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.nav-drawer-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-drawer-nav a {
+  display: block;
+  padding: 0.85rem 0;
+  border-bottom: var(--hairline);
+  text-decoration: none;
+  color: var(--ash);
+  font-size: 1.25rem;
+}
+
+.nav-drawer-nav a.active,
+.nav-drawer-nav a:hover {
+  color: var(--smoke);
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-switch button {
+  min-width: 3.25rem;
+  min-height: 2.6rem;
+  padding: 0.35rem 0.7rem;
+  background: transparent;
+  border: var(--hairline);
+  color: var(--ash);
+  cursor: pointer;
+  font: inherit;
+}
+
+.lang-switch button[aria-pressed="true"] {
+  color: var(--smoke);
+  border-color: color-mix(in srgb, var(--lamp) 55%, transparent);
+}
+
+@media (max-width: 767px) {
+  .header-tools .lang-btn {
+    display: none;
+  }
+}
+
 .lang-btn,
 .ghost-link {
   background: transparent;
@@ -1114,6 +1188,11 @@
     display: flex;
   }
 
+  .menu-btn,
+  .nav-drawer {
+    display: none;
+  }
+
   .header-info {
     display: none;
   }
@@ -1183,6 +1262,7 @@
 @media (prefers-reduced-transparency: reduce) {
   .site-header,
   .dock,
+  .nav-drawer,
   .chip {
     background: var(--charcoal);
     backdrop-filter: none;
