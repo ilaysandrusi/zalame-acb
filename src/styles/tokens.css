@@ -36,6 +36,7 @@
   --hairline: 1px solid color-mix(in srgb, var(--copper) 55%, transparent);
   --dock-h: 4.5rem;
   --header-h: 4.25rem;
+  --chrome-bg: color-mix(in srgb, var(--charcoal) 70%, transparent);
 
   --ease-door: cubic-bezier(0.77, 0, 0.175, 1);
   --dur-door: 1.6s;

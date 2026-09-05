@@ -8,7 +8,9 @@
   gap: var(--space-3);
   min-height: var(--header-h);
   padding: 0.6rem 0.75rem;
-  background: var(--charcoal);
+  background: var(--chrome-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: var(--hairline);
   overflow: clip;
 }
@@ -749,7 +751,9 @@
   grid-template-columns: repeat(3, 1fr);
   min-height: var(--dock-h);
   padding-bottom: env(safe-area-inset-bottom);
-  background: color-mix(in srgb, var(--ink) 94%, transparent);
+  background: var(--chrome-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-top: var(--hairline);
 }
 
