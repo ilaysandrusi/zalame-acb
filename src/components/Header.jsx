@@ -119,16 +119,7 @@ export function Header() {
             <a className="btn btn-primary header-cta" href="#events-form">
               {t.eventsPage.heroCta}
             </a>
-          ) : (
-            <a
-              className="btn btn-primary header-cta"
-              href={venue.links.reserve}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.hero.cta}
-            </a>
-          )}
+          ) : null}
         </div>
       </header>
       {menuOpen ? (
