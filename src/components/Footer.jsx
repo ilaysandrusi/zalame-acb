@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { venue } from "../data/venue";
 import { formatHoursLine, getOpenStatus } from "../lib/hours";
 import { useLang } from "../i18n/index.jsx";
@@ -65,6 +66,9 @@ export function Footer() {
             <div className="info-block">
               <h3>{t.info.accessibility}</h3>
               <p>{lang === "he" ? venue.accessibility.noteHe : venue.accessibility.noteEn}</p>
+              <p>
+                <Link to="/accessibility">{t.a11y.statement}</Link>
+              </p>
             </div>
           </div>
           <div className="info-block">

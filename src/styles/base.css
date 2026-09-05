@@ -100,3 +100,39 @@ p {
     scroll-behavior: auto;
   }
 }
+
+html.a11y-sm {
+  font-size: 90%;
+}
+
+html.a11y-lg {
+  font-size: 118%;
+}
+
+html.a11y-xl {
+  font-size: 135%;
+}
+
+html.a11y-contrast {
+  --smoke: #f7f3ea;
+  --ash: #ddd6c8;
+  --chrome-bg: #0e0c0a;
+  --lamp: #f0d7b0;
+}
+
+html.a11y-links a {
+  text-decoration: underline;
+}
+
+html.a11y-readable body {
+  font-family: Arial, Helvetica, "Heebo", sans-serif;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+
+html.a11y-motion,
+html.a11y-motion * {
+  scroll-behavior: auto !important;
+  animation: none !important;
+  transition: none !important;
+}

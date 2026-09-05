@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MEDIA, venue } from "../data/venue";
 import { useLang } from "../i18n/index.jsx";
+import { A11Y_EVENT, motionPaused } from "../lib/a11y.js";
 
 export function EventsHero() {
   const { t, lang } = useLang();
@@ -8,10 +9,14 @@ export function EventsHero() {
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setPlayVideo(!mq.matches);
+    const update = () => setPlayVideo(!motionPaused());
     update();
     mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
+    window.addEventListener(A11Y_EVENT, update);
+    return () => {
+      mq.removeEventListener("change", update);
+      window.removeEventListener(A11Y_EVENT, update);
+    };
   }, []);
 
   return (
