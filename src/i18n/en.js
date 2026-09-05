@@ -132,7 +132,6 @@ export const en = {
   },
   eventsGallery: {
     title: "Gallery",
-    lead: "What the bar looks like at an event.",
     filtersLabel: "Gallery filters",
     filters: {
       all: "All",

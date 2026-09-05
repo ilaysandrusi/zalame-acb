@@ -884,11 +884,6 @@
   gap: var(--space-7);
 }
 
-.events-gallery-lead {
-  margin: 0;
-  max-width: 36ch;
-}
-
 .events-gallery-filters {
   display: flex;
   flex-wrap: wrap;
