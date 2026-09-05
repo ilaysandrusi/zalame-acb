@@ -132,7 +132,6 @@ export const he = {
   },
   eventsGallery: {
     title: "גלריה",
-    lead: "מה שהבר נראה באירוע.",
     filtersLabel: "סינון הגלריה",
     filters: {
       all: "הכל",

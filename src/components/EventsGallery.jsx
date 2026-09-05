@@ -54,7 +54,6 @@ export function EventsGallery() {
       <div className="events-gallery-body">
         <div className="events-gallery-head">
           <h2 className="events-gallery-title">{t.eventsGallery.title}</h2>
-          <p className="lede events-gallery-lead">{t.eventsGallery.lead}</p>
           <div className="events-gallery-filters" role="group" aria-label={t.eventsGallery.filtersLabel}>
             {FILTERS.map((key) => (
               <button
