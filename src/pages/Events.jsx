@@ -2,7 +2,6 @@ import { EventsHero } from "../components/EventsHero.jsx";
 import { MEDIA, venue } from "../data/venue";
 import { EventsForm } from "../components/EventsForm.jsx";
 import { EventsGallery } from "../components/EventsGallery.jsx";
-import { VenueInfo } from "../components/VenueInfo.jsx";
 import { useLang } from "../i18n/index.jsx";
 
 export function Events() {
@@ -74,8 +73,6 @@ export function Events() {
           </div>
         </div>
       </section>
-
-      <VenueInfo />
     </main>
   );
 }

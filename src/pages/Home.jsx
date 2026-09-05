@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { homeSectionsMedia, MEDIA, venue } from "../data/venue";
 import { formatHoursRange, getOpenStatus, todaySpec } from "../lib/hours";
 import { NewsletterSignup } from "../components/NewsletterSignup.jsx";
-import { VenueInfo } from "../components/VenueInfo.jsx";
 import { useLang } from "../i18n/index.jsx";
 
 function StatusChip() {
@@ -191,8 +190,6 @@ export function Home() {
       </section>
 
       <NewsletterSignup />
-
-      <VenueInfo />
     </main>
   );
 }
