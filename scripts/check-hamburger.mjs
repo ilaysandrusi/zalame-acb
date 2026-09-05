@@ -12,9 +12,19 @@ function assert(ok, message) {
 
 await page.goto(url, { waitUntil: "networkidle" });
 await page.waitForSelector(".menu-btn");
+await page.waitForTimeout(450);
 
-await page.evaluate(() => window.scrollTo(0, 900));
+await page.evaluate(() => document.fonts.ready);
 await page.waitForTimeout(200);
+const scrolledY = await page.evaluate(() => {
+  const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  const target = Math.min(900, Math.max(480, Math.floor(max * 0.55)));
+  window.scrollTo(0, target);
+  return window.scrollY;
+});
+await page.waitForTimeout(250);
+const settledY = await page.evaluate(() => window.scrollY);
+assert(settledY > 200, `page is scrolled before opening the menu (y=${settledY}, target=${scrolledY})`);
 
 await page.getByRole("button", { name: "תפריט" }).click();
 await page.waitForSelector(".nav-drawer");
@@ -27,8 +37,13 @@ assert(headerBox && headerBox.y < 8, `header stays at the top of the viewport (y
 assert(await closeBtn.isVisible(), "close (X) button is visible without scrolling the menu");
 
 await closeBtn.click();
-await page.waitForTimeout(150);
-assert((await page.locator(".nav-drawer").count()) === 0, "menu closes from the header X");
+await page.waitForSelector(".nav-drawer", { state: "detached" });
+await page.waitForTimeout(80);
+const yAfterClose = await page.evaluate(() => window.scrollY);
+assert(
+  Math.abs(yAfterClose - settledY) < 8,
+  `closing the menu keeps scroll position (before=${settledY}, after=${yAfterClose})`,
+);
 assert(await page.getByRole("button", { name: "תפריט" }).isVisible(), "hamburger is visible after close");
 
 await page.evaluate(() => window.scrollTo(0, 0));
