@@ -13,11 +13,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="inner">
-        <p className="footer-info">
-          {lang === "he" ? venue.legalNameHe : t.info.legal}
-          <br />
-          {lang === "he" ? venue.addressHe : venue.addressEn}
-        </p>
+        <p className="footer-info">{lang === "he" ? venue.addressHe : venue.addressEn}</p>
         <div className="footer-social">
           {socialLinks.map(({ key, href, label, Icon }) => (
             <a
