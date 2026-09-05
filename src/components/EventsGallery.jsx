@@ -3,7 +3,7 @@ import { useLang } from "../i18n/index.jsx";
 import { eventsGalleryMediaNormalized } from "../data/venue.js";
 
 const PAGE_SIZE = 9;
-const FILTERS = ["all", "station", "drink", "crowd"];
+const FILTERS = ["all", "station"];
 
 function getIsMobile() {
   return (

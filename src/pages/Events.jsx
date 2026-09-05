@@ -2,6 +2,7 @@ import { EventsHero } from "../components/EventsHero.jsx";
 import { MEDIA, venue } from "../data/venue";
 import { EventsForm } from "../components/EventsForm.jsx";
 import { EventsGallery } from "../components/EventsGallery.jsx";
+import { VenueInfo } from "../components/VenueInfo.jsx";
 import { useLang } from "../i18n/index.jsx";
 
 export function Events() {
@@ -12,56 +13,37 @@ export function Events() {
     <main id="content">
       <EventsHero />
 
-      <section className="chapter" id="events-bar">
-        <div className="chapter-inner events-split">
-          <div>
-            <h2>{t.eventsPage.barTitle}</h2>
-            <p>{t.eventsPage.lead}</p>
-            <a className="btn btn-primary events-offer-cta" href="#events-form">
-              {t.eventsPage.heroCta}
+      <section className="chapter" id="events-offers">
+        <div className="chapter-inner events-prose">
+          <h2>{t.eventsPage.title}</h2>
+          <p className="lede">{t.eventsPage.lead}</p>
+          <div className="events-options">
+            <article>
+              <h3>{t.eventsPage.barTitle}</h3>
+              <p>{t.paths.there.body}</p>
+            </article>
+            <article>
+              <h3>{t.eventsPage.workshopsTitle}</h3>
+              <p>{t.eventsPage.workshopsBody}</p>
+            </article>
+          </div>
+          <p>{t.eventsTease.body}</p>
+          <p className="events-contacts">
+            <a href={venue.links.facebookEvents} target="_blank" rel="noopener noreferrer">
+              {t.eventsPage.facebookEvents}
             </a>
-          </div>
-          <div className="frame events-split-photo">
-            <img
-              src={MEDIA.eventsBar}
-              alt={t.eventsPage.barAlt}
-              width="1600"
-              height="1066"
-              loading="lazy"
-            />
-          </div>
+            {" · "}
+            <a href={venue.links.instagramEvents} target="_blank" rel="noopener noreferrer">
+              {t.eventsPage.instagramEvents}
+            </a>
+          </p>
+          <a className="btn btn-primary events-offer-cta" href="#events-form">
+            {t.eventsPage.heroCta}
+          </a>
         </div>
       </section>
 
-      <section className="chapter" id="events-workshops">
-        <div className="chapter-inner events-split events-split-flip">
-          <div>
-            <h2>{t.eventsPage.workshopsTitle}</h2>
-            <p>{t.eventsPage.workshopsBody}</p>
-            <p className="events-contacts">
-              <a href={venue.links.facebookEvents} target="_blank" rel="noopener noreferrer">
-                {t.eventsPage.facebookEvents}
-              </a>
-              {" · "}
-              <a href={venue.links.instagramEvents} target="_blank" rel="noopener noreferrer">
-                {t.eventsPage.instagramEvents}
-              </a>
-            </p>
-            <a className="btn btn-ghost events-offer-cta" href="#events-form">
-              {t.eventsPage.heroCta}
-            </a>
-          </div>
-          <div className="frame events-split-photo">
-            <img
-              src={MEDIA.eventsWide}
-              alt={t.eventsPage.workshopsAlt}
-              width="1600"
-              height="1066"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
+      <EventsGallery />
 
       <section className="chapter" id="events-form">
         <div className="chapter-inner events-contact-grid">
@@ -93,7 +75,7 @@ export function Events() {
         </div>
       </section>
 
-      <EventsGallery />
+      <VenueInfo />
     </main>
   );
 }
