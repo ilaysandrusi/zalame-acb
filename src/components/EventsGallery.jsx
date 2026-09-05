@@ -3,6 +3,7 @@ import { useLang } from "../i18n/index.jsx";
 import { eventsGalleryMediaNormalized } from "../data/venue.js";
 
 const PAGE_SIZE = 9;
+const FILTERS = ["all", "station", "drink", "crowd"];
 
 function getIsMobile() {
   return (
@@ -19,12 +20,27 @@ function toMobileVariant(url) {
 export function EventsGallery() {
   const { t } = useLang();
   const isMobile = useMemo(() => getIsMobile(), []);
+  const [filter, setFilter] = useState("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [announce, setAnnounce] = useState("");
 
-  const total = eventsGalleryMediaNormalized.length;
+  const filtered = useMemo(
+    () =>
+      filter === "all"
+        ? eventsGalleryMediaNormalized
+        : eventsGalleryMediaNormalized.filter((item) => item.kind === filter),
+    [filter],
+  );
+
+  const total = filtered.length;
   const remaining = Math.max(0, total - visibleCount);
-  const visibleItems = eventsGalleryMediaNormalized.slice(0, visibleCount);
+  const visibleItems = filtered.slice(0, visibleCount);
+
+  function onFilter(next) {
+    setFilter(next);
+    setVisibleCount(PAGE_SIZE);
+    setAnnounce("");
+  }
 
   function onLoadMore() {
     if (remaining <= 0) return;
@@ -38,6 +54,20 @@ export function EventsGallery() {
       <div className="events-gallery-body">
         <div className="events-gallery-head">
           <h2 className="events-gallery-title">{t.eventsGallery.title}</h2>
+          <p className="lede events-gallery-lead">{t.eventsGallery.lead}</p>
+          <div className="events-gallery-filters" role="group" aria-label={t.eventsGallery.filtersLabel}>
+            {FILTERS.map((key) => (
+              <button
+                key={key}
+                type="button"
+                className={filter === key ? "events-filter is-active" : "events-filter"}
+                aria-pressed={filter === key}
+                onClick={() => onFilter(key)}
+              >
+                {t.eventsGallery.filters[key]}
+              </button>
+            ))}
+          </div>
           {announce ? (
             <p className="events-gallery-live" role="status" aria-live="polite">
               {announce}
@@ -50,7 +80,7 @@ export function EventsGallery() {
             <div key={item.id} className="events-gallery-tile">
               <img
                 src={isMobile ? toMobileVariant(item.src) : item.src}
-                alt={`${item[`alt${t.eventsGallery.altKeySuffix}`] || item.altEn} (${idx + 1})`}
+                alt={item[`alt${t.eventsGallery.altKeySuffix}`] || item.altEn}
                 loading={idx < 3 ? "eager" : "lazy"}
                 decoding="async"
                 style={{ objectPosition: item.focal || "center" }}

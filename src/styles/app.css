@@ -598,6 +598,8 @@
 #david,
 #info,
 #events-form,
+#events-bar,
+#events-workshops,
 #events-home,
 #newsletter,
 .events-hero,
@@ -858,6 +860,47 @@
   gap: var(--space-6);
 }
 
+.events-offer-cta {
+  margin-top: 1.1rem;
+}
+
+.events-david-photo {
+  margin-top: var(--space-4);
+}
+
+.events-contact-grid {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.events-gallery-lead {
+  margin: 0;
+  max-width: 36ch;
+}
+
+.events-gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.events-filter {
+  appearance: none;
+  background: transparent;
+  border: var(--hairline);
+  color: var(--ash);
+  font: inherit;
+  font-size: var(--text-sm);
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+}
+
+.events-filter.is-active,
+.events-filter:hover {
+  color: var(--smoke);
+  border-color: color-mix(in srgb, var(--lamp) 55%, transparent);
+}
+
 .events-split-photo {
   aspect-ratio: 3 / 2;
   width: 100%;
@@ -1075,6 +1118,15 @@
   .info-grid,
   .events-split {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: start;
+  }
+
+  .events-split-flip .events-split-photo {
+    order: -1;
+  }
+
+  .events-contact-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: start;
   }
 
