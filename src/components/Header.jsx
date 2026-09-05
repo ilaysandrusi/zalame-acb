@@ -107,6 +107,7 @@ export function Header() {
             aria-label={menuOpen ? t.nav.closeMenu : t.nav.menu}
             aria-expanded={menuOpen}
             aria-controls={menuId}
+            onMouseDown={(event) => event.preventDefault()}
             onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? <X size={22} weight="light" aria-hidden="true" /> : <List size={22} weight="light" aria-hidden="true" />}
