@@ -102,9 +102,12 @@ export const en = {
     heroTagline: "Cocktail bar for special events",
     heroCta: "Contact us",
     lead: "A premium cocktail bar for events, any venue and any scale.",
+    barTitle: "Cocktail bar for events",
+    barAlt: "Zalame cocktail station at an outside event",
     workshopsTitle: "Company events and workshops",
     workshopsBody:
       "Sessions for groups, professionals, enthusiasts, and anyone who wants to learn from the best.",
+    workshopsAlt: "Guests at a company night with a Zalame cocktail station",
     contact: "052-641-0005 · cao@zalame.co.il",
     facebookEvents: "Events Facebook",
     instagramEvents: "Events Instagram",
@@ -129,6 +132,14 @@ export const en = {
   },
   eventsGallery: {
     title: "Gallery",
+    lead: "The bar at the event, the glass, and the room.",
+    filtersLabel: "Gallery filters",
+    filters: {
+      all: "All",
+      station: "The bar",
+      drink: "The glass",
+      crowd: "The room",
+    },
     loadMore: "Load more",
     end: "No more photos",
     loadedAnnouncement: "Loaded {n} photos",

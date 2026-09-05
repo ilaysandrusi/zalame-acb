@@ -102,9 +102,12 @@ export const he = {
     heroTagline: "קוקטייל בר לאירועים מיוחדים",
     heroCta: "צור קשר",
     lead: "קוקטייל בר יוקרתי לאירועים בכל מקום ובכל מידה.",
+    barTitle: "קוקטייל בר לאירועים",
+    barAlt: "עמדת קוקטיילים של זאלמה באירוע מחוץ לבר",
     workshopsTitle: "אירועי חברה והדרכות",
     workshopsBody:
       "הדרכות לקבוצות, למקצוענים, לחובבנים ולכאלה שרוצים ללמוד מהטובים ביותר.",
+    workshopsAlt: "קהל בערב חברה עם עמדת קוקטיילים של זאלמה",
     contact: "052-641-0005 · cao@zalame.co.il",
     facebookEvents: "פייסבוק אירועים",
     instagramEvents: "אינסטגרם אירועים",
@@ -129,6 +132,14 @@ export const he = {
   },
   eventsGallery: {
     title: "גלריה",
+    lead: "הבר באירוע, הכוס, והקהל.",
+    filtersLabel: "סינון הגלריה",
+    filters: {
+      all: "הכל",
+      station: "הבר באירוע",
+      drink: "הכוס",
+      crowd: "הקהל",
+    },
     loadMore: "טען עוד",
     end: "אין עוד תמונות",
     loadedAnnouncement: "נטענו {n} תמונות",
