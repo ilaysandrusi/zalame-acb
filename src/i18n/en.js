@@ -163,4 +163,35 @@ export const en = {
     error: "Add a name and phone number.",
     messageTitle: "Newsletter signup, Zalame",
   },
+  a11y: {
+    open: "Accessibility menu",
+    title: "Accessibility adjustments",
+    text: "Text size",
+    textUp: "Larger",
+    textDown: "Smaller",
+    contrast: "High contrast",
+    links: "Underline links",
+    motion: "Stop motion",
+    readable: "Readable font",
+    reset: "Reset",
+    statement: "Accessibility statement",
+  },
+  a11yPage: {
+    title: "Accessibility statement",
+    intro:
+      "Zalame ACB is built to meet IS 5568 (WCAG 2.0 Level AA) on pages we control. This states how the site is made. It is not a third-party accessibility certificate.",
+    siteTitle: "What the site includes",
+    siteBody:
+      "You can skip to content, move with the keyboard, see a clear focus ring, read Hebrew and English, and get image descriptions. Forms have labels and error messages.",
+    widgetTitle: "Adjustments button",
+    widgetBody:
+      "A button on the screen lets you enlarge text, raise contrast, underline links, stop motion, and switch to a readable font. Settings stay in the browser.",
+    limitsTitle: "Outside our control",
+    limitsBody:
+      "Table booking on Ontopo, WhatsApp, Waze and Maps are third-party services. Their accessibility depends on those providers.",
+    venueTitle: "The venue",
+    contactTitle: "Contact about accessibility",
+    contactLead: "Reach us by phone or email:",
+    updated: "Last updated: 5 September 2026.",
+  },
 };
