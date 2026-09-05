@@ -16,7 +16,6 @@
   background: var(--chrome-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: var(--hairline);
   overflow: clip;
 }
 
@@ -835,7 +834,6 @@
   background: var(--chrome-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-top: var(--hairline);
 }
 
 .dock a {
