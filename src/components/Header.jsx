@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { List, X } from "@phosphor-icons/react";
 import { venue, MEDIA } from "../data/venue";
@@ -23,35 +23,26 @@ export function Header() {
     scheduleRouteScroll(to.hash || "");
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!menuOpen) return undefined;
 
     const onKey = (event) => {
       if (event.key === "Escape") setMenuOpen(false);
     };
 
-    const scrollY = window.scrollY;
-    const { body } = document;
-    const previous = {
-      position: body.style.position,
-      top: body.style.top,
-      width: body.style.width,
-      overflow: body.style.overflow,
+    const allowInDrawer = (event) => event.target.closest?.(".nav-drawer");
+    const preventBackgroundScroll = (event) => {
+      if (!allowInDrawer(event)) event.preventDefault();
     };
 
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.width = "100%";
-    body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
+    document.addEventListener("wheel", preventBackgroundScroll, { passive: false });
+    document.addEventListener("touchmove", preventBackgroundScroll, { passive: false });
 
     return () => {
       window.removeEventListener("keydown", onKey);
-      body.style.position = previous.position;
-      body.style.top = previous.top;
-      body.style.width = previous.width;
-      body.style.overflow = previous.overflow;
-      window.scrollTo(0, scrollY);
+      document.removeEventListener("wheel", preventBackgroundScroll);
+      document.removeEventListener("touchmove", preventBackgroundScroll);
     };
   }, [menuOpen]);
 
@@ -66,7 +57,8 @@ export function Header() {
 
   return (
     <>
-      <header className={menuOpen ? "site-header is-menu-open" : "site-header"}>
+      <div className="header-slot" aria-hidden="true" />
+      <header className="site-header">
         <a className="skip" href="#content">
           {t.skip}
         </a>
@@ -115,6 +107,7 @@ export function Header() {
             aria-label={menuOpen ? t.nav.closeMenu : t.nav.menu}
             aria-expanded={menuOpen}
             aria-controls={menuId}
+            onMouseDown={(event) => event.preventDefault()}
             onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? <X size={22} weight="light" aria-hidden="true" /> : <List size={22} weight="light" aria-hidden="true" />}

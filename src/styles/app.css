@@ -1,7 +1,12 @@
+.header-slot {
+  height: var(--header-h);
+}
+
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 40;
+  inset-inline: 0;
+  z-index: 60;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -90,14 +95,6 @@
   cursor: pointer;
 }
 
-.site-header.is-menu-open {
-  position: fixed;
-  top: 0;
-  inset-inline: 0;
-  width: 100%;
-  z-index: 60;
-}
-
 .nav-drawer {
   position: fixed;
   top: var(--header-h);
@@ -109,6 +106,7 @@
   gap: var(--space-6);
   padding: var(--space-5) 1.15rem calc(var(--dock-h) + var(--space-6));
   overflow: auto;
+  overscroll-behavior: contain;
   background: var(--chrome-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
