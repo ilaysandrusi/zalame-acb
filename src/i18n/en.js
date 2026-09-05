@@ -132,13 +132,11 @@ export const en = {
   },
   eventsGallery: {
     title: "Gallery",
-    lead: "The bar at the event, the glass, and the room.",
+    lead: "What the bar looks like at an event.",
     filtersLabel: "Gallery filters",
     filters: {
       all: "All",
       station: "The bar",
-      drink: "The glass",
-      crowd: "The room",
     },
     loadMore: "Load more",
     end: "No more photos",

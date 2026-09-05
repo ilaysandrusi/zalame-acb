@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { venue } from "../data/venue";
 import { useLang } from "../i18n/index.jsx";
 import { FacebookIcon, InstagramIcon, TripAdvisorIcon } from "./SocialIcons.jsx";
@@ -11,9 +10,6 @@ const socialLinks = [
 
 export function Footer() {
   const { t, lang } = useLang();
-  const { pathname } = useLocation();
-  const onEvents = pathname.endsWith("/events");
-
   return (
     <footer className="site-footer">
       <div className="inner">
@@ -31,15 +27,9 @@ export function Footer() {
             </a>
           ))}
         </div>
-        {onEvents ? (
-          <a className="footer-reserve" href="#events-form">
-            {t.eventsPage.heroCta}
-          </a>
-        ) : (
-          <a className="footer-reserve" href={venue.links.reserve} target="_blank" rel="noopener noreferrer">
-            {t.footer.reserve}
-          </a>
-        )}
+        <a className="footer-reserve" href={venue.links.reserve} target="_blank" rel="noopener noreferrer">
+          {t.footer.reserve}
+        </a>
       </div>
     </footer>
   );

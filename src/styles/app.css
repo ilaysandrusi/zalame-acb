@@ -598,8 +598,7 @@
 #david,
 #info,
 #events-form,
-#events-bar,
-#events-workshops,
+#events-offers,
 #events-home,
 #newsletter,
 .events-hero,
@@ -858,6 +857,18 @@
 .events-split {
   display: grid;
   gap: var(--space-6);
+}
+
+.events-options {
+  display: grid;
+  gap: var(--space-5);
+  margin: var(--space-5) 0;
+}
+
+.events-options h3 {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
 }
 
 .events-offer-cta {
@@ -1128,6 +1139,10 @@
   .events-contact-grid {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: start;
+  }
+
+  .events-options {
+    grid-template-columns: 1fr 1fr;
   }
 
   .paths-grid {

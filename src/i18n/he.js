@@ -132,13 +132,11 @@ export const he = {
   },
   eventsGallery: {
     title: "גלריה",
-    lead: "הבר באירוע, הכוס, והקהל.",
+    lead: "מה שהבר נראה באירוע.",
     filtersLabel: "סינון הגלריה",
     filters: {
       all: "הכל",
       station: "הבר באירוע",
-      drink: "הכוס",
-      crowd: "הקהל",
     },
     loadMore: "טען עוד",
     end: "אין עוד תמונות",
