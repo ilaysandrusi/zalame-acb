@@ -88,7 +88,7 @@ export const he = {
   dock: {
     aria: "פעולות מהירות",
     table: "שולחן",
-    nav: "דרך",
+    nav: "Waze",
     whatsapp: "WhatsApp",
     contact: "פנייה",
   },

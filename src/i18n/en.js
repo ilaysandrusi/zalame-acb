@@ -88,7 +88,7 @@ export const en = {
   dock: {
     aria: "Quick actions",
     table: "Table",
-    nav: "Directions",
+    nav: "Waze",
     whatsapp: "WhatsApp",
     contact: "Contact",
   },
