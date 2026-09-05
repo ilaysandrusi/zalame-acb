@@ -90,16 +90,25 @@
   cursor: pointer;
 }
 
+.site-header.is-menu-open {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  width: 100%;
+  z-index: 60;
+}
+
 .nav-drawer {
   position: fixed;
   top: var(--header-h);
   inset-inline: 0;
   bottom: 0;
-  z-index: 50;
+  z-index: 55;
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
   padding: var(--space-5) 1.15rem calc(var(--dock-h) + var(--space-6));
+  overflow: auto;
   background: var(--chrome-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
